@@ -1,22 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define SIZE 5
 
 int main(void)
 {
     int i;
-    int score[SIZE];
-    int sum = 0;
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 3, 4, 5};
+    int flag_same = 1;
 
-    printf(“5명의 점수를 입력하세요.\n”);
-
-    for(i=0; i<SIZE; i++)
+    for (i=0; i<SIZE; i++)
     {
-        scanf(“%d”, &score[i]);
-        sum += score[i];
+        if (a[i] != b[i])
+        {
+            flag_same = 0;
+        }
+            //printf("index %i different!\n", i);
     }
 
-    printf("성적평균:%d\n");
-    
+    if (flag_same == 1)
+        printf("same!\n");
+    else
+        printf("different!\n");
+
     return 0;
 }
